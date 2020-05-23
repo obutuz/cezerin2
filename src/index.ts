@@ -25,11 +25,11 @@ app.use((req, res, next) => {
   const dburi = headers.dburi
   const smtp = headers.smtp
 
-  // set decypted as session
+  // set as a session
   sessionStorage.setItem("dburi", dburi)
   sessionStorage.setItem("smtp", smtp)
 
-  // assing decrypted values
+  // assing values to config
   console.log(sessionStorage.getItem("dburi"))
   console.log(sessionStorage.getItem("smtp"))
   next()
