@@ -1,5 +1,4 @@
 import { ApolloServer } from "apollo-server-express"
-import bcrypt from "bcrypt"
 import bodyParser from "body-parser"
 import cookieParser from "cookie-parser"
 import express from "express"
@@ -23,32 +22,16 @@ const STATIC_OPTIONS = {
 app.set("trust proxy", 1)
 app.use((req, res, next) => {
   const headers = req.headers
-  const dburi = decrypt(headers.dburi)
-  const smtp = decrypt(headers.smtp)
-  const hashPass = "jEaye34tUqJ%lv"
+  const dburi = headers.dburi
+  const smtp = headers.smtp
 
   // set decypted as session
   sessionStorage.setItem("dburi", dburi)
   sessionStorage.setItem("smtp", smtp)
 
-  // assing decrypted vatlues
+  // assing decrypted values
   console.log(sessionStorage.getItem("dburi"))
   console.log(sessionStorage.getItem("smtp"))
-
-  // bcrypt
-  function decrypt(valueToDecrypt: string) {
-    const hash = valueToDecrypt
-    // Load hash from your password DB.
-    bcrypt.compare(hashPass, hash, (err, result) => {
-      // result == true
-      if (result == true) {
-        return result
-      } else {
-        console.error(err)
-        return err
-      }
-    })
-  }
   next()
 })
 
