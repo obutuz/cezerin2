@@ -8,7 +8,3 @@ mongodb://myDBReader:D1fficultP%40ssw0rd@mongodb0.example.com:27017/?authSource=
 
 smtp 
 {"host":"imap","port":"587","secure":"false","user":"dog","pass":"cat","fromName":"meow","fromAddress":"bark"}
-
-pass above as encrypted from bcrypt
-
-bcrypt password = jEaye34tUqJ%lv
