@@ -1,0 +1,14 @@
+to test header // host project
+
+get url
+get http://localhost:3001/api/v1/theme/settings
+
+dburi
+mongodb://myDBReader:D1fficultP%40ssw0rd@mongodb0.example.com:27017/?authSource=admin
+
+smtp 
+{"host":"imap","port":"587","secure":"false","user":"dog","pass":"cat","fromName":"meow","fromAddress":"bark"}
+
+pass above as encrypted from bcrypt
+
+bcrypt password = jEaye34tUqJ%lv
